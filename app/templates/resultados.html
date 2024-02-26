@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(14, 14, 42);
+            color: white;
+            align-items: center;
+            font-family: Fredoka Light;
+        }
+        div{
+            float: left;
+            margin: 40px;
+        }
+        table{
+            text-align: center;
+            border-radius: 5px;
+            border-color: rgb(71, 184, 146);
+            box-shadow: 0 6px 12px 0 rgba(33, 197, 129, 0.671), 0 6px 15px 0 rgba(33, 197, 129, 0.671);
+        }
+        tr{
+            padding: 5px;
+        }
+        td{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Diccionario</h1>
+        <table >
+            <tr>
+                <td>Lexema</td>
+                <td>Identificador</td>
+                <td>Categoría</td>
+            </tr>
+            {% for value in ts %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>
+                <td>{{value[2]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br><br><br>
+    <div>
+        <h1>Tabla de tokens</h1>
+        <table >
+        <tr>
+            <td>Lexema</td>
+            <td>Identificador</td>
+            <td>Categoria</td>
+        </tr>
+        {% for value in toks %}
+            <tr>
+                <td>{{value[0]}}</td>
+                <td>{{value[1]}}</td>
+                <td>{{value[2]}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <div>
+        {%if errores%}
+        <h1>Errores</h1>
+        {%for error in errores%}
+            <p>{{error.value}} en linea {{error.lineno}}</p>
+            <br>
+            {%endfor%}
+        {%endif%}
+    </div>
+</body>
+</html>

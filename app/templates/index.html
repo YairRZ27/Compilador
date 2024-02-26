@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <style>
+       *{
+            background-color: rgb(14, 14, 42);
+            color: white;
+            align-items: center;
+            font-family: Fredoka Light;
+        }
+        textarea{
+            font-size: 15px;
+            border-radius: 5px;
+            width: 500px;
+            height: 400px;
+            border-color: rgb(71, 184, 146);
+            transition: 0.5s;     
+        }
+        textarea:hover{
+            box-shadow: 0 6px 12px 0 rgba(33, 197, 129, 0.671), 0 6px 15px 0 rgba(33, 197, 129, 0.671);
+            transition: 0.5s;
+        }
+        input{
+            font-size: 25px;
+            text-decoration: none;
+            outline: none;
+            border: 1px solid;
+            border-radius: 5px;
+            border-color: aqua;
+            letter-spacing: 0.5;
+            transition: 0.5s;
+        }
+        input:hover {
+            cursor: pointer;
+            transition: 0.5s;
+            box-shadow: 0 12px 16px 0 rgba(33, 197, 129, 0.671), 0 17px 50px 0 rgba(33, 197, 129, 0.671);
+        }
+    </style>
+</head>
+<body>
+    <h1>Analizador lexico</h1>
+    <form action="/analizar" method="post">
+        <textarea name="data"  cols="30" rows="10" placeholder="Ingresa tu codigo aqui"></textarea>
+        <br><br>
+        <input type="submit" value="Analizar">
+    </form>
+</body>
+</html>
